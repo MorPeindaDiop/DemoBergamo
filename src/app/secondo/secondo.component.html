@@ -3,6 +3,24 @@
 <button (click)="clickEvent($event,2)">CLiccami</button>
 </div>
 <p>{{testo}}</p>
-<input (input)="testo=$event.target.value" [value]='testo'>
-<br>
+<div>
+    <label>Two way a bindind a mano</label>
+    <input (input)="inputEvent($event)" [value]='testo'>
+</div>
+<div>
+<label>One way binding verso l'utente [value]="testo"</label>
 <input [(ngModel)]="testo">
+</div>
+
+<div>
+    <label>one way bindinf verso il codice (input)="inputEvent(this.testo=$event.target.value;)"</label>
+    <input (input)="inputEvent($event)">
+</div>
+
+<div>
+    <label>two way binding con ngModel</label>
+    <input [(ngModel)]="testo">
+
+</div>
+<br>
+

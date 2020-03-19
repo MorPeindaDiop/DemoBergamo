@@ -17,7 +17,9 @@ testo: string='Iniziale';
    this.testo='Default';
   }
    console.log('ho cliccato il pulsante'+param);
-   ev.stopPropagation;
+   ev.stopPropagation();
  }
- 
+ inputEvent (ev){
+   this.testo=ev.target.value;
+ }
 }
