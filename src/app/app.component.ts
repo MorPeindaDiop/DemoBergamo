@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'DemoBergamo';
 
-  htmlString='<div><p>Prova</p></div>';
-  linkUrl='https:google.it';
+  clickAppComponet(value:string){
+    console.log(cliccato)
+  }
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { emit } from 'cluster';
+
 
 @Component({
   selector: 'app-secondo',
@@ -7,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecondoComponent implements OnInit {
 testo: string='Iniziale';
+
+  @Output
+  myClick: EventEmitter<void>=new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -15,6 +21,7 @@ testo: string='Iniziale';
  clickEvent (ev: MouseEvent, param : number){
    if(param===2){
    this.testo='Default';
+   this.myClick=emit();
   }
    console.log('ho cliccato il pulsante'+param);
    ev.stopPropagation();
